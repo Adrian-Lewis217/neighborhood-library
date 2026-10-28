@@ -4,9 +4,21 @@ import java.util.Scanner;
 
 public class BookApp {
     public static void main(String[] args) {
-        //Scanner userInput = new Scanner(System.in);
+        Scanner userInput = new Scanner(System.in);
 
-        Book[] listOfBooks = new Book[20];
+        // The Home Screen
+        System.out.println("1 - Show Available Books");
+        System.out.println("2 - Show Checked Out Books");
+        System.out.println("3 - Exit");
+        System.out.print("Choose an option: ");
+        int option = userInput.nextInt();
+        userInput.nextLine();
+        System.out.println(option);
+
+        // Prompt the user
+
+        // List of Books
+        /*Book[] listOfBooks = new Book[20];
 
         listOfBooks[0] = new Book(1, "978-1-11-000002-0", "Potato Knight");
         listOfBooks[1] = new Book(2, "978-1-11-035865-3", "The Fallen Potato");
@@ -29,7 +41,7 @@ public class BookApp {
         listOfBooks[18] = new Book(19, "978-1-11-023001-1", "The Lost Ark");
         listOfBooks[19] = new Book(20, "978-1-11-001001-7", "Dragon's Curse");
 
-        listOfBooks[7].display();
+        listOfBooks[7].display();*/
 
         }
 
