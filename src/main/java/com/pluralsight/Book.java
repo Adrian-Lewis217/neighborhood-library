@@ -16,6 +16,13 @@ public class Book {
         this.checkedOutTo = checkedOutTo;
     }
 
+    public Book(int id, String isBn, String title, boolean isCheckedOut) {
+        this.id = id;
+        this.isBn = isBn;
+        this.title = title;
+        this.isCheckedOut = isCheckedOut;
+    }
+
     public Book(int id, String isBn, String title) {
         this.id = id;
         this.isBn = isBn;
@@ -63,6 +70,18 @@ public class Book {
 
     public void setCheckedOutTo(String checkedOutTo) {
         this.checkedOutTo = checkedOutTo;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", isBn='" + isBn + '\'' +
+                ", title='" + title + '\'' +
+                ", isCheckedOut=" + isCheckedOut +
+                ", checkedOutTo='" + checkedOutTo + '\'' +
+                ", length=" + length +
+                '}';
     }
 }
 
