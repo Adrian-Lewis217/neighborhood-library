@@ -42,7 +42,13 @@ public class BookApp {
         listOfBooks[19] = new Book(20, "978-1-11-001001-7", "Dragon's Curse");
 
         listOfBooks[12].display();
+        displayList(listOfBooks);
 
         }
 
+    public static void displayList(Book[] books){
+        for (Book book : books) {
+            System.out.println(book.getId() + "|" + book.getIsBn() + "|" + book.getTitle());
+        }
     }
+}

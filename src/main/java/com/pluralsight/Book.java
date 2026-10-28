@@ -6,6 +6,7 @@ public class Book {
     private String title;
     private boolean isCheckedOut;
     private String checkedOutTo;
+    private int length;
 
     public Book(int id, String isBn, String title, boolean isCheckedOut, String checkedOutTo) {
         this.id = id;
@@ -21,18 +22,12 @@ public class Book {
         this.title = title;
     }
 
-    public void display() {
-        System.out.println(id + "|" + isBn + "|" + title);
-    }
-
-    public void displayList(Book books){
-        for (int i = 0; i < books.length; i++) {
-            System.out.println(id + "|" + isBn + "|" + title);
-        }
-    }
-
     public int getId() {
         return id;
+    }
+
+    public void display(){
+        System.out.println(id + "|" + isBn + "|" + title);
     }
 
     public void setId(int id) {
