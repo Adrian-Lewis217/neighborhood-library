@@ -16,21 +16,7 @@ public class BookApp {
         String option = userInput.nextLine();
         userInput.nextLine();
         System.out.println(option);
-
-        // Switch Statement
-        switch (option){
-            case "1":
-                showAvailableBooks();
-                break;
-            case "2":
-                showCheckedOut();
-                break;
-            case "3":
-                showAvailableBooks();
-                break;
-            default:
-        }
-
+        
         // List of Available Books
         Book[] listOfBooks = {
                 new Book(1, "978-1-11-000002-0", "Potato Knight", false),
@@ -55,6 +41,20 @@ public class BookApp {
                 new Book(20, "978-1-11-001001-7", "Dragon's Curse", false)
         };
 
+        // Switch Statement
+        switch (option){
+            case "1":
+                showAvailableBooks(listOfBooks);
+                break;
+            case "2":
+                showCheckedOut();
+                break;
+            case "3":
+                System.out.println("Thank you for using our app");
+                break;
+            default:
+                System.out.println("Please choose from the display options");
+        }
         }
 
     public static void displayList(Book[] books){
@@ -63,6 +63,10 @@ public class BookApp {
         }
     }
 
-    public static void showAvailableBooks(){}
+    public static void showAvailableBooks(Book[] books){
+        for (int i = 0; i < books.length; i++) {
+            System.out.println(books);
+        }
+    }
     public static void showCheckedOut(){}
 }
