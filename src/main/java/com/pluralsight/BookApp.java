@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import java.awt.print.Book;
 import java.util.Scanner;
 
 public class BookApp {
@@ -12,11 +11,11 @@ public class BookApp {
         listOfBooks[0] = new Book(1, "978-1-11-000002-0", "Potato Knight");
         listOfBooks[1] = new Book(2, "978-1-11-035865-3", "The Fallen Potato");
         listOfBooks[2] = new Book(3, "978-1-11-010394-7", "The Adventures of Sweet and Potato");
-        listOfBooks[3] = new Book(4, "978-1-11-038404-5", "Hoolow Fry");
+        listOfBooks[3] = new Book(4, "978-1-11-038404-5", "Hollow Fry");
         listOfBooks[4] = new Book(5, "978-1-11-003554-9", "Elden Potato");
         listOfBooks[5] = new Book(6, "978-1-11-476483-3", "Beginner's Guide For Java");
         listOfBooks[6] = new Book(7, "978-1-11-134955-3", "The Potato Kid");
-        listOfBooks[7] = new Book(8, "978-1-11-937543-0", "Night of the Living Potatos");
+        listOfBooks[7] = new Book(8, "978-1-11-937543-0", "Night of the Living Potatoes");
         listOfBooks[8] = new Book(9, "978-1-11-038571-2", "Captain Potato");
         listOfBooks[9] = new Book(10, "978-1-11-058601-1", "The Lost Potato");
         listOfBooks[10] = new Book(11, "978-1-11-035001-5", "Escape from Potato Mountain");
