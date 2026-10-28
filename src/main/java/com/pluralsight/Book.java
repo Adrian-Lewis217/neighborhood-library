@@ -7,6 +7,14 @@ public class Book {
     private boolean isCheckedOut;
     private String checkedOutTo;
 
+    public Book(int id, String isBn, String title, boolean isCheckedOut, String checkedOutTo) {
+        this.id = id;
+        this.isBn = isBn;
+        this.title = title;
+        this.isCheckedOut = isCheckedOut;
+        this.checkedOutTo = checkedOutTo;
+    }
+
     public Book(int id, String isBn, String title) {
         this.id = id;
         this.isBn = isBn;
@@ -15,6 +23,12 @@ public class Book {
 
     public void display() {
         System.out.println(id + "|" + isBn + "|" + title);
+    }
+
+    public void displayList(Book books){
+        for (int i = 0; i < books.length; i++) {
+            System.out.println(id + "|" + isBn + "|" + title);
+        }
     }
 
     public int getId() {

@@ -18,7 +18,7 @@ public class BookApp {
         // Prompt the user
 
         // List of Books
-        /*Book[] listOfBooks = new Book[20];
+        Book[] listOfBooks = new Book[20];
 
         listOfBooks[0] = new Book(1, "978-1-11-000002-0", "Potato Knight");
         listOfBooks[1] = new Book(2, "978-1-11-035865-3", "The Fallen Potato");
@@ -41,7 +41,7 @@ public class BookApp {
         listOfBooks[18] = new Book(19, "978-1-11-023001-1", "The Lost Ark");
         listOfBooks[19] = new Book(20, "978-1-11-001001-7", "Dragon's Curse");
 
-        listOfBooks[7].display();*/
+        listOfBooks[12].display();
 
         }
 
