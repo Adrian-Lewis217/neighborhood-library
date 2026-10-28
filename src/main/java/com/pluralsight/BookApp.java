@@ -29,6 +29,8 @@ public class BookApp {
         listOfBooks[18] = new Book(19, "978-1-11-023001-1", "The Lost Ark");
         listOfBooks[19] = new Book(20, "978-1-11-001001-7", "Dragon's Curse");
 
-        };
+        listOfBooks[7].display();
+
+        }
 
     }
