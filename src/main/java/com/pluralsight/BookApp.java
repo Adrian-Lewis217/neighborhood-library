@@ -70,30 +70,32 @@ public class BookApp {
             System.out.println(books[i]);
         }
         System.out.print("Would you like to check out a book(Y/N): ");
-        userInput.nextLine();
         String choose = userInput.nextLine();
         if (choose.equalsIgnoreCase("Y")) {
+
             // Prompt the User for Id or return back to main
             System.out.print("Enter an Id to check out, or 0 to go back: ");
-            userInput.nextInt();
-            userInput.nextLine();
             int chooseId = userInput.nextInt();
+            userInput.nextLine();
+
             if (chooseId != 0) {
                 // Enter name if they want to check out the book
                 System.out.print("Enter your name");
                 String userName = userInput.nextLine();
 
                 for (int i = 0; i < books.length; i++) {
-                    if (books[i].isCheckedOut().getId() == chooseId) {
+                    if (books[i].getId() == chooseId) {
 
+                        books[i].setCheckedOut(true);
+                        books[i].setCheckedOutTo(userName);
+
+                        System.out.println(books[i].getTitle() + " checked out to " + userName);
+                    } else {
+                        System.out.println("Sorry, that book is already checked out by "
+                                + books[i].getCheckedOutTo());
                     }
-                }
-            }
 
-
-
-            // Print the book checked out and name of user
-
+                    break;
         }
 
         userInput.close();

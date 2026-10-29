@@ -1,7 +1,5 @@
 package com.pluralsight;
 
-import java.util.Scanner;
-
 public class Book {
     private int id;
     private String isBn;
@@ -63,7 +61,6 @@ public class Book {
     }
 
     public void setCheckedOut(boolean checkedOut) {
-        checkedOut = false;
         isCheckedOut = checkedOut;
     }
 
@@ -71,8 +68,7 @@ public class Book {
         return checkedOutTo;
     }
 
-    public void setCheckedOutTo(String checkedOutTo, Scanner userInput) {
-        checkedOutTo = userInput.nextLine();
+    public void setCheckedOutTo(String checkedOutTo) {
         this.checkedOutTo = checkedOutTo;
     }
 
