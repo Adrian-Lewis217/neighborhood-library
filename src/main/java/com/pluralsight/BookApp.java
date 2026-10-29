@@ -6,6 +6,30 @@ public class BookApp {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 
+        // List of Available Books
+        Book[] listOfBooks = {
+                new Book(1, "978-1-11-000002-0", "Potato Knight", false),
+                new Book(2, "978-1-11-035865-3", "The Fallen Potato", false),
+                new Book(3, "978-1-11-010394-7", "The Adventures of Sweet and Potato", false),
+                new Book(4, "978-1-11-038404-5", "Hollow Fry", false),
+                new Book(5, "978-1-11-003554-9", "Elden Potato", false),
+                new Book(6, "978-1-11-476483-3", "Beginner's Guide For Java", false),
+                new Book(7, "978-1-11-134955-3", "The Potato Kid", false),
+                new Book(8, "978-1-11-937543-0", "Night of the Living Potatoes", false),
+                new Book(9, "978-1-11-038571-2", "Captain Potato", false),
+                new Book(10, "978-1-11-058601-1", "The Lost Potato", false),
+                new Book(11, "978-1-11-035001-5", "Escape from Potato Mountain", false),
+                new Book(12, "978-1-11-123001-8", "The King of Games", false),
+                new Book(13, "978-1-11-023401-9", "Titan's Rise", false),
+                new Book(14, "978-1-11-000801-6", "Mones", false),
+                new Book(15, "978-1-11-008801-5", "Harry Potter", false),
+                new Book(16, "978-1-11-077001-4", "Bones", false),
+                new Book(17, "978-1-11-044001-4", "Captain Underpants", false),
+                new Book(18, "978-1-11-006001-3", "Goosebumps", false),
+                new Book(19, "978-1-11-023001-1", "The Lost Ark", false),
+                new Book(20, "978-1-11-001001-7", "Dragon's Curse", false)
+        };
+
         boolean running = true;
 
         while (running) {
@@ -18,30 +42,6 @@ public class BookApp {
             // Prompt the user for option
             String option = userInput.nextLine();
             System.out.println(option);
-
-            // List of Available Books
-            Book[] listOfBooks = {
-                    new Book(1, "978-1-11-000002-0", "Potato Knight", false),
-                    new Book(2, "978-1-11-035865-3", "The Fallen Potato", false),
-                    new Book(3, "978-1-11-010394-7", "The Adventures of Sweet and Potato", false),
-                    new Book(4, "978-1-11-038404-5", "Hollow Fry", false),
-                    new Book(5, "978-1-11-003554-9", "Elden Potato", false),
-                    new Book(6, "978-1-11-476483-3", "Beginner's Guide For Java", false),
-                    new Book(7, "978-1-11-134955-3", "The Potato Kid", false),
-                    new Book(8, "978-1-11-937543-0", "Night of the Living Potatoes", false),
-                    new Book(9, "978-1-11-038571-2", "Captain Potato", false),
-                    new Book(10, "978-1-11-058601-1", "The Lost Potato", false),
-                    new Book(11, "978-1-11-035001-5", "Escape from Potato Mountain", false),
-                    new Book(12, "978-1-11-123001-8", "The King of Games", false),
-                    new Book(13, "978-1-11-023401-9", "Titan's Rise", false),
-                    new Book(14, "978-1-11-000801-6", "Mones", false),
-                    new Book(15, "978-1-11-008801-5", "Harry Potter", false),
-                    new Book(16, "978-1-11-077001-4", "Bones", false),
-                    new Book(17, "978-1-11-044001-4", "Captain Underpants", false),
-                    new Book(18, "978-1-11-006001-3", "Goosebumps", false),
-                    new Book(19, "978-1-11-023001-1", "The Lost Ark", false),
-                    new Book(20, "978-1-11-001001-7", "Dragon's Curse", false)
-            };
 
             // Switch Statement
             switch (option) {
@@ -97,10 +97,12 @@ public class BookApp {
 
                         found = true;
 
-                        books[i].setCheckedOut(true);
-                        books[i].setCheckedOutTo(userName);
+                        if (!books[i].isCheckedOut()) {
+                            books[i].setCheckedOut(true);
+                            books[i].setCheckedOutTo(userName);
 
-                        System.out.println(books[i].getTitle() + " checked out to " + userName);
+                            System.out.println(books[i].getTitle() + " checked out to " + userName);
+                        }
 
                     } else {
                         System.out.println(books[i].getTitle() + " is already checked out by " + books[i].getCheckedOutTo());
@@ -116,12 +118,20 @@ public class BookApp {
 
         Scanner userInput = new Scanner(System.in);
 
+        boolean foundCheckedOut = false;
+
         for (Book book : books) {
 
             if (book.isCheckedOut()) {
 
+                foundCheckedOut = true;
+
                 System.out.println(book.getId() + " | " + book.getTitle() + " | Checked out to: " + book.getCheckedOutTo());
             }
+        }
+
+        if (!foundCheckedOut) {
+            System.out.println("No books are currently checked out.");
         }
 
         System.out.print("Enter an ID to check in or 0 to return: ");
