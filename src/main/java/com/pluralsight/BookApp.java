@@ -83,27 +83,24 @@ public class BookApp {
                 System.out.print("Enter your name");
                 String userName = userInput.nextLine();
 
+                boolean found = false;
+
                 for (int i = 0; i < books.length; i++) {
                     if (books[i].getId() == chooseId) {
+
+                        found = true;
 
                         books[i].setCheckedOut(true);
                         books[i].setCheckedOutTo(userName);
 
                         System.out.println(books[i].getTitle() + " checked out to " + userName);
                     } else {
-                        System.out.println("Sorry, that book is already checked out by "
-                                + books[i].getCheckedOutTo());
+                        System.out.println("Sorry, that book is already checked out by " + books[i].getCheckedOutTo());
                     }
 
                     break;
+                }
+            }
         }
-
-        userInput.close();
     }
-
-    private static int getId() {
-        return 0;
-    }
-
-    public static void showCheckedOut(){}
 }
