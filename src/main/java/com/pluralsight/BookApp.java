@@ -139,24 +139,29 @@ import java.util.Scanner;
 
         public static void showCheckedOut(Book[] books, Scanner userInput) {
 
+            // Variables for checking if the book is checked out by a user
             boolean foundCheckedOut = false;
 
             for (Book book : books) {
 
+                //If book is checked out
                 if (book.isCheckedOut()) {
 
                     foundCheckedOut = true;
 
+                    // print book's id and title, and who had checked it out
                     System.out.println(book.getId() + " | " + book.getTitle() + " | Checked out to: " + book.getCheckedOutTo());
                     System.out.println();
                 }
             }
 
+            // If no book has been checked out
             if (!foundCheckedOut) {
                 System.out.println("No books are currently checked out.");
                 System.out.println();
             }
 
+            // Prompt the user if they would like to check in their book
             System.out.print("Enter an ID to check in or 0 to return: ");
             int id = userInput.nextInt();
             System.out.println();
