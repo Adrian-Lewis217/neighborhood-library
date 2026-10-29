@@ -86,11 +86,11 @@ public class BookApp {
             userInput.nextLine();
 
             if (chooseId != 0) {
+                boolean found = false;
+
                 // Enter name if they want to check out the book
                 System.out.print("Enter your name: ");
                 String userName = userInput.nextLine();
-
-                boolean found = false;
 
                 for (int i = 0; i < books.length; i++) {
                     if (books[i].getId() == chooseId) {
@@ -101,14 +101,20 @@ public class BookApp {
                             books[i].setCheckedOut(true);
                             books[i].setCheckedOutTo(userName);
 
-                            System.out.println(books[i].getTitle() + " checked out to " + userName);
+                            System.out.println(books[i].getTitle() +
+                                    " checked out to " + userName);
+                        } else {
+                                System.out.println(books[i].getTitle() +
+                                        " is already checked out by " +
+                                        books[i].getCheckedOutTo());
                         }
 
-                    } else {
-                        System.out.println(books[i].getTitle() + " is already checked out by " + books[i].getCheckedOutTo());
-                    }
+                        break;
 
-                    break;
+                    }
+                }
+                if (!found) {
+                    System.out.println("Book ID not found.");
                 }
             }
         }

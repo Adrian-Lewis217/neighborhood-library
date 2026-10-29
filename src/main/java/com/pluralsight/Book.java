@@ -61,7 +61,7 @@ public class Book {
     }
 
     public void setCheckedOut(boolean checkedOut) {
-        isCheckedOut = checkedOut;
+        this.isCheckedOut = checkedOut;
     }
 
     public String getCheckedOutTo() {
@@ -69,8 +69,7 @@ public class Book {
     }
 
     public void setCheckedOutTo(String checkedOutTo) {
-        //this.checkedOutTo = checkedOutTo;
-        this.checkedOutTo = "";
+        this.checkedOutTo = checkedOutTo;
     }
 
     @Override
