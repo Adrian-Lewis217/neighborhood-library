@@ -69,7 +69,8 @@ public class Book {
     }
 
     public void setCheckedOutTo(String checkedOutTo) {
-        this.checkedOutTo = checkedOutTo;
+        //this.checkedOutTo = checkedOutTo;
+        this.checkedOutTo = "";
     }
 
     @Override

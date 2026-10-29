@@ -87,7 +87,7 @@ public class BookApp {
 
             if (chooseId != 0) {
                 // Enter name if they want to check out the book
-                System.out.print("Enter your name");
+                System.out.print("Enter your name: ");
                 String userName = userInput.nextLine();
 
                 boolean found = false;
