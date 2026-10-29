@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class BookApp {
@@ -64,9 +65,43 @@ public class BookApp {
     }
 
     public static void showAvailableBooks(Book[] books){
+        Scanner userInput = new Scanner(System.in);
         for (int i = 0; i < books.length; i++) {
-            System.out.println(books);
+            System.out.println(books[i]);
         }
+        System.out.print("Would you like to check out a book(Y/N): ");
+        userInput.nextLine();
+        String choose = userInput.nextLine();
+        if (choose.equalsIgnoreCase("Y")) {
+            // Prompt the User for Id or return back to main
+            System.out.print("Enter an Id to check out, or 0 to go back: ");
+            userInput.nextInt();
+            userInput.nextLine();
+            int chooseId = userInput.nextInt();
+            if (chooseId != 0) {
+                // Enter name if they want to check out the book
+                System.out.print("Enter your name");
+                String userName = userInput.nextLine();
+
+                for (int i = 0; i < books.length; i++) {
+                    if (books[i].isCheckedOut().getId() == chooseId) {
+
+                    }
+                }
+            }
+
+
+
+            // Print the book checked out and name of user
+
+        }
+
+        userInput.close();
     }
+
+    private static int getId() {
+        return 0;
+    }
+
     public static void showCheckedOut(){}
 }

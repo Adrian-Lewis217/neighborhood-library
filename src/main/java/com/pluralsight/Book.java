@@ -1,12 +1,13 @@
 package com.pluralsight;
 
+import java.util.Scanner;
+
 public class Book {
     private int id;
     private String isBn;
     private String title;
     private boolean isCheckedOut;
     private String checkedOutTo;
-    private int length;
 
     public Book(int id, String isBn, String title, boolean isCheckedOut, String checkedOutTo) {
         this.id = id;
@@ -56,11 +57,13 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public boolean isCheckedOut() {
         return isCheckedOut;
     }
 
     public void setCheckedOut(boolean checkedOut) {
+        checkedOut = false;
         isCheckedOut = checkedOut;
     }
 
@@ -68,20 +71,14 @@ public class Book {
         return checkedOutTo;
     }
 
-    public void setCheckedOutTo(String checkedOutTo) {
+    public void setCheckedOutTo(String checkedOutTo, Scanner userInput) {
+        checkedOutTo = userInput.nextLine();
         this.checkedOutTo = checkedOutTo;
     }
 
     @Override
     public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", isBn='" + isBn + '\'' +
-                ", title='" + title + '\'' +
-                ", isCheckedOut=" + isCheckedOut +
-                ", checkedOutTo='" + checkedOutTo + '\'' +
-                ", length=" + length +
-                '}';
+        return getId() + " | " + getIsBn() + " | " + getTitle();
     }
 }
 
