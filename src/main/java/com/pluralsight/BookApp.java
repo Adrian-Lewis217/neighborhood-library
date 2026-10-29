@@ -103,4 +103,6 @@ public class BookApp {
             }
         }
     }
+
+    public static void showCheckedOut(){}
 }
